@@ -23,6 +23,9 @@ namespace AKQATask.Controllers
         [HttpPost]
         public TaskModel ConvertToWord(TaskModel model)
         {
+            model.Value = model.Value.Replace("'", "");
+            model.Value = model.Value.Replace("\"", "");
+
             if (ModelState.IsValid)
             {
                 model.ResultText = ConvertToWords(model.Value).ToUpper();
@@ -155,7 +158,7 @@ namespace AKQATask.Controllers
                                 var restnum = ConvertWholeNumber(Number.Substring(pos));
 
                                 //If there is no rest number then do not add "and" else do add.
-                                word = ConvertWholeNumber(Number.Substring(0, pos)) + place + (string.IsNullOrEmpty(restnum) ? string.Empty : "and " + restnum);
+                                word = ConvertWholeNumber(Number.Substring(0, pos)) + place + ((string.IsNullOrEmpty(restnum) && place == " Hundred ") ? string.Empty : "and " + restnum);
                             }
                             catch { }
                         }

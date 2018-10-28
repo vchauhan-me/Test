@@ -1,4 +1,5 @@
 ﻿#region Namespaces
+using AKQATask.Models;
 using System.Web.Mvc;
 #endregion
 
@@ -14,7 +15,14 @@ namespace AKQATask.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-            return View();
+            //Default value set through passing fixed model
+            
+            var model = new TaskModel()
+            {
+                Name = "John Smith",
+                Value = "123.45"
+            };
+            return View(model);
         }
         #endregion
 

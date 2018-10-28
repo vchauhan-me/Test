@@ -3,6 +3,7 @@ $("#btnGetResult").click(function () {
 
     var name = $("#Name").val();
     var value = $("#Value").val();
+    value = value.replace(/"/g, "'");
 
 
     var model = '{Name: "' + name + '", Value: "' + value + '" }';

@@ -1,0 +1,30 @@
+﻿@model AKQATask.Models.TaskModel
+@{
+    ViewBag.Title = "AKQA Test - Index";
+}
+
+<h2>Index</h2>
+
+<fieldset>
+    <legend>Required fields for test</legend>
+    <div>
+        @Html.LabelFor(model => model.Name)
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.Name)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Value)
+    </div>
+    <div>
+        @Html.TextBoxFor(model => model.Value)
+    </div>
+    <input type="submit" id="btnGetResult" value="Get Result" />
+</fieldset>
+<br />
+<fieldset>
+    <legend>Result is:</legend>
+    <div id="viewB">
+
+    </div>
+</fieldset>

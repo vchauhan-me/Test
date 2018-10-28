@@ -1,10 +1,10 @@
-﻿
+﻿//This JS will be called on button click and that will call API to return the result.
 $("#btnGetResult").click(function () {
-
     var name = $("#Name").val();
     var value = $("#Value").val();
-    value = value.replace(/"/g, "'");
 
+    //Check if Value is having double / single quote or not.
+    value = value.replace(/"/g, "'");
 
     var model = '{Name: "' + name + '", Value: "' + value + '" }';
     $.ajax({

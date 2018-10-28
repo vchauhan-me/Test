@@ -1,9 +1,12 @@
-﻿using System;
+﻿#region Namespaces
+using System;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
+#endregion
 
+#region Main Code
 namespace AKQATask
 {
     public class Global : HttpApplication
@@ -15,7 +18,7 @@ namespace AKQATask
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
            
-            // IOC not implementated currently as there is not such big implementation
+            // IoC not implementated currently as this is a small implementation
             // BootstrapContainer();
 
         }
@@ -36,3 +39,4 @@ namespace AKQATask
         //}
     }
 }
+#endregion

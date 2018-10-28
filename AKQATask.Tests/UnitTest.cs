@@ -2,7 +2,10 @@
 using AKQATask.Controllers;
 using AKQATask.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-#endregion 
+using System;
+using System.Net.Http;
+using System.Web.Http;
+#endregion
 
 #region Main Code
 namespace AKQATask.Tests
@@ -41,7 +44,7 @@ namespace AKQATask.Tests
             var model = new TaskModel() { Name = NAME_PARAMETER, Value = NAME_VALUE };
             var result = controller.ConvertToWord(model) as TaskModel;
             Assert.AreNotEqual(DEFAULT_VALUE, result.ResultText);
-        }
+        }       
         #endregion 
     }
 }
